@@ -1,1 +1,0 @@
-( collection of queries, reports, views, and other objects)
