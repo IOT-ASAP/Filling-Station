@@ -153,30 +153,32 @@ input:focus{
   font: 1.15em/50px 'Noto Sans', sans-serif;
   color: #ffffff;
 }
-.registration-global-section--wrapper{
-  position: relative;
+.global-section--wrapper{
   width: 100%;
   height: 100vh;
-  z-index: 1;
   padding-top: 60px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.registration-global-section--box{
+.global-section--box{
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.registration-top-panel{
+.top-panel{
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   background: #BD7BF7;
 }
-.registration-top-panel--button{
+.top-panel--button{
   position: absolute;
   top: 0;
   width: 60px;
@@ -186,18 +188,18 @@ input:focus{
   padding: 0;
   background: transparent;
 }
-.registration-top-panel--button img{
+.top-panel--button img{
   width: 22px;
   height: 22px;
   margin: 10px;
 }
-.registration-top-panel--back{
+.top-panel--back{
   left: 0;
 }
-.registration-top-panel--apply{
+.top-panel--right{
   right: 0;
 }
-.registration-top-panel--title-box{
+.top-panel--title-box{
   position: absolute;
   top: 0;
   left: 0;
@@ -319,3 +321,91 @@ input:focus{
 }
 
 .registration-field-box input::-webkit-input-placeholder {color: #cccccc;}
+
+/*Profile page*/
+
+.profile--image-container{
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+.profile--image-container img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.profile--info-wrapper {
+    width: 100%;
+    padding-top: 20px;
+    display: inline-block;
+    height: auto;
+}
+.profile--info-field{
+  width: 100%;
+  display: inline-block;
+  height: auto;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.profile--info-label{
+  width: 100%;
+  font: 400 .75em 'Noto Sans', sans-serif;
+  padding-bottom: 5px;
+  color: #999999;
+}
+.profile--info-value{
+  width: 100%;
+  font: 400 .95em 'Noto Sans', sans-serif;
+  color: #555555;
+}
+
+/*Friends page*/
+
+.friends-list--wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.friends-list--item {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.friends-list--item:last-child {
+    border:none;
+}
+
+.friends-list--profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin:10px
+}
+
+.friends-list--name {
+    width:220px;
+    height:10px;
+    font:1em/50px 'Noto Sans', sans-serif;
+    float:right;
+    margin-left: 0px;
+}
+.friends-list--make-route-container {
+    float: right;
+    margin-left: 0px;
+    margin-right: 140px;
+    margin-top: 15px;
+}

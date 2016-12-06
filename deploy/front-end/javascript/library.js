@@ -35,6 +35,7 @@ var Ajax = {
 		 		onSendData = JSON.stringify(onSendData);
 
 		xhr.open('POST', url, true);
+		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xhr.send(onSendData);
 
 		xhr.onreadystatechange = function(){
@@ -47,6 +48,7 @@ var Ajax = {
     var xhr = this.getXHR();
 
 		xhr.open('GET', options.url, true);
+		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xhr.send(null);
 
 		xhr.onreadystatechange = function(){
