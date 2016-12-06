@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=cyrillic');
+
+#wrapper{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+body{
+  margin: 0;
+}
+a:hover, a{
+  text-decoration: none;
+}
+input:focus{
+  outline: none;
+  border: none;
+}
+.login-form-background{
+  width: 100%;
+  height: 100vh;
+  background: url(../static/images/loginBackground.jpeg) no-repeat center;
+  background-size: cover;
+  font-size: .75em;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+}
+.login-form-background--blacked{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.logo-wrapper{
+  position: relative;
+  width: 100%;
+  height: 45%;
+}
+.login-form-container{
+  position: relative;
+  width: 100%;
+  height: 55%;
+}
+.login-form-create-account{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font: 1em/60px 'Noto Sans', sans-serif;
+}
+.login-form-create-account span{
+  color: #ffffff;
+  font-size: 1.1em;
+}
+.login-form-actions-box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+}
+.logo-cycle-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  margin: -67px 0 0 -67px;
+  width: 134px;
+  height: 134px;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+.logo-cycle-container img{
+  margin: 28px;
+  width: 80px;
+  height: 80px;
+}
+.login-fields-wrapper{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 110px;
+}
+.login-fields-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.login-fields-center-block{
+  width: 100%;
+  display:table-cell;
+  vertical-align: middle;
+}
+.login-field-box{
+  position: relative;
+  width: 100%;
+  height: 45px;
+}
+.login-field-box:first-child{
+  margin-bottom: 20px;
+}
+.login-form-remind-password{
+  display: inline-block;
+  box-sizing: content-box;
+  width: 100%;
+  height: 20px;
+  padding: 10px 0;
+  font-family: 'Noto Sans', sans-serif;
+  margin-bottom: 35px;
+}
+.login-form-remind-password span{
+  display: inline-block;
+  float: right;
+  height: 20px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, .8);
+  font-size: 1em;
+  line-height: 20px;
+}
+
+.login-field-box img{
+  position: absolute;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  top: 10px;
+  left: 20px;
+}
+.login-field-box input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px 0 60px;
+  width: 100%;
+  border: none;
+  color: rgba(255, 255, 255, .8);
+  font-size: 1.15em;
+  border-bottom: 1.5px solid rgba(255, 255, 255, .8);
+  font-family: 'Noto Sans', sans-serif;
+}
+.login-field-box input::-webkit-input-placeholder {color: rgba(255, 255, 255, .8);}
+
+.login-form-submit-btn{
+  width: 100%;
+  height: 50px;
+  background: #BD7BF7;
+  text-align: center;
+  font: 1.15em/50px 'Noto Sans', sans-serif;
+  color: #ffffff;
+}
+.registration-global-section--wrapper{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  padding-top: 60px;
+}
+
+.registration-global-section--box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.registration-top-panel{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  background: #BD7BF7;
+}
+.registration-top-panel--button{
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+.registration-top-panel--button img{
+  width: 22px;
+  height: 22px;
+  margin: 10px;
+}
+.registration-top-panel--back{
+  left: 0;
+}
+.registration-top-panel--apply{
+  right: 0;
+}
+.registration-top-panel--title-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 65px;
+  color: #ffffff;
+  font: 1.1em/60px 'Noto Sans', sans-serif;
+  text-align: center;
+}
+
+.registration-set-profile-image--wrapper{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: #BD7BF7;
+}
+
+.registration-set-profile-image--container{
+  position: relative;
+  box-sizing: border-box;
+  width: 100px;
+  height: 150px;
+  padding: 10px 0;
+  margin: auto;
+}
+
+.registration-set-profile-image--title{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -60px;
+  color: #ffffff;
+  font: .8em/20px 'Noto Sans', sans-serif;
+  height: 32px;
+  width: 120px;
+  text-align: center;
+}
+
+.registration-set-profile-image--container img{
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.registration-main-content--wrapper{
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding-top: 15px;
+}
+
+.registration-main-content--container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.registration-field-box{
+  position: relative;
+  width: 100%;
+  height: 45px;
+  margin-top: 20px;
+}
+
+.registration-field-box:first-child{
+  margin: 0;
+}
+
+.registration-field-box img{
+  position: absolute;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  top: 10px;
+  left: 20px;
+}
+
+.registration-field-box input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 0;
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px 0 60px;
+  width: 100%;
+  border: none;
+  color: #666666;
+  font-size: 1em;
+  border-bottom: 1.5px solid #dddddd;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.registration-form-create-account{
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #cccccc;
+  font: 1em/70px 'Noto Sans', sans-serif;
+}
+
+.registration-form-create-account a{
+  color: #aaaaaa;
+  font-size: 1.1em;
+}
+
+.registration-form-actions-box{
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  margin: 5px 0;
+}
+
+.registration-field-box input::-webkit-input-placeholder {color: #cccccc;}
