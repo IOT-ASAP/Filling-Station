@@ -460,6 +460,9 @@ input:focus{
   color: #666666;
   border-bottom: 1px solid #dddddd;
 }
+.global-menu--item:last-child{
+  border: none;
+}
 #menu.show{
   animation-name: show-global-menu;
   animation-duration: .5s;
@@ -470,14 +473,27 @@ input:focus{
 }
 
 @-webkit-keyframes show-global-menu {
-    0 { left: -81vw; }
-    100% { left: 0; }
+    0% { left: -81vw; opacity: 0; }
+    100% { left: 0; opacity: 1; }
 }
 @-moz-keyframes show-global-menu {
-    0 { left: -81vw; }
-    100% { left: 0; }
+    0% { left: -81vw; opacity: 0; }
+    100% { left: 0; opacity: 1; }
 }
 @keyframes show-global-menu {
-    0 { left: -81vw; }
-    100% { left: 0; }
+    0% { left: -81vw; opacity: 0; }
+    100% { left: 0; opacity: 1; }
+}
+
+@-webkit-keyframes hide-global-menu {
+    0% { left: 0; opacity: 1; }
+    100% { left: -81vw; opacity: 0; }
+}
+@-moz-keyframes hide-global-menu {
+    0% { left: 0; opacity: 1; }
+    100% { left: -81vw; opacity: 0; }
+}
+@keyframes hide-global-menu {
+    0% { left: 0; opacity: 1; }
+    100% { left: -81vw; opacity: 0; }
 }
