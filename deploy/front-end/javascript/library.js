@@ -59,6 +59,7 @@ var Ajax = {
   },
   page: function(pageName, callback){
     var xhr = this.getXHR();
+		globalMenuIsActive = false;
 
 		xhr.open('GET', 'pages/' + pageName + '.html', true);
 		xhr.send(null);

@@ -1,7 +1,7 @@
 var globalWrapper = document.getElementById('wrapper');
 
 function loadLoginPage(){
-  Ajax.page('friends', function(){
+  Ajax.page('home', function(){
     globalWrapper.innerHTML = this;
   });
 }

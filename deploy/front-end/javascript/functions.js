@@ -5,7 +5,7 @@ function sendLoginData(){
   };
 
   if(fields.email != '' && fields.password != ''){
-    Ajax.post('/login', fields, function(){
+    Ajax.post('/api/v1.0/login', fields, function(){
       var data = JSON.parse(this);
 
       if(data.success){
@@ -31,7 +31,7 @@ function sendRegistrationData(){
   if(fields.firstName != '' && fields.lastName != '' && fields.email != ''
   && fields.password != '' && fields.repeatPassword != '')
   {
-    Ajax.post('/registration', fields, function(){
+    Ajax.post('/api/v1.0/registration', fields, function(){
       var data = JSON.parse(this);
 
       if(data.success){
@@ -43,4 +43,36 @@ function sendRegistrationData(){
   } else {
     alert('Please, fill all fields.');
   }
+}
+
+function sendDeleteFriendRequest(event, target, attr){
+  var userId = {
+    id: +target.getAttribute(attr)
+  };
+
+  Ajax.post('/api/v1.0/deleteFriend', userId, function(){
+    var data = JSON.parse(this);
+
+    if(data.success){
+      deleteFriend();
+    } else {
+      alert(data.message);
+    }
+  });
+}
+
+function getUserLocation(event, target, attr){
+  var userId = {
+    id: +target.getAttribute(attr)
+  };
+
+  Ajax.post('/api/v1.0/getUserLocation', userId, function(){
+    var data = JSON.parse(this);
+
+    if(data.success){
+      drawRoute(data.coordinates);
+    } else {
+      alert(data.message);
+    }
+  });
 }
