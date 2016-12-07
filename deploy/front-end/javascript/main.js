@@ -29,3 +29,11 @@ document.addEventListener('click', function(event){
     globalMenuIsActive = false;
   }
 }, false);
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
