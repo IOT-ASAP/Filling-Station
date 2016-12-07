@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=cyrillic');
-
 #wrapper{
   width: 100%;
   height: 100vh;
@@ -384,36 +382,75 @@ input:focus{
 }
 
 .friends-list--item {
-    width: 100%;
-    height: 80px;
-    margin: 0;
-    border-bottom: 1px solid #dddddd;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #eeeeee;
 }
 
-.friends-list--item:last-child {
-    border:none;
+.friends-list--item:last-child { border: none; }
+
+.friends-list--profile-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
 }
 
-.friends-list--profile-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin:10px
+.friends-list--profile-image img{
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
 }
 
-.friends-list--name {
-    width:220px;
-    height:10px;
-    font:1em/50px Helvetica, sans-serif;
-    float:right;
-    margin-left: 0px;
+.friends-list--info-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px 0 80px;
+  box-sizing: border-box;
 }
-.friends-list--make-route-container {
-    float: right;
-    margin-left: 0px;
-    margin-right: 140px;
-    margin-top: 15px;
+
+.friends-list--info-box{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
+
+.friends-list--name{
+  width: 100%;
+  height: 20px;
+  color: #888888;
+  font: 400 .95em/20px Helvetica, sans-serif;
+  padding: 12px 0 3px 0;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 5px;
+}
+
+.friends-list--button-box{
+  width: 100%;
+  height: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.friends-list--btn{
+  display: inline-block;
+  width: auto;
+  height: 25px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #ffffff;
+  font: 400 .75em/25px Helvetica, sans-serif;
+  border-radius: 4px;
+  background: #BD7BF7;
+}
+
 
 /*----Menu----*/
 
@@ -471,6 +508,9 @@ input:focus{
   animation-name: hide-global-menu;
   animation-duration: .5s;
 }
+
+
+/*----Animations----*/
 
 @-webkit-keyframes show-global-menu {
     0% { left: -81vw; opacity: 0; }
