@@ -11,6 +11,9 @@ body{
 a:hover, a{
   text-decoration: none;
 }
+button:focus{
+  outline: none;
+}
 input:focus{
   outline: none;
   border: none;
@@ -21,7 +24,7 @@ input:focus{
   background: url(../static/images/loginBackground.jpeg) no-repeat center;
   background-size: cover;
   font-size: .75em;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 400;
 }
 .login-form-background--blacked{
@@ -45,7 +48,7 @@ input:focus{
   height: 60px;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
-  font: 1em/60px 'Noto Sans', sans-serif;
+  font: 1em/60px Helvetica, sans-serif;
 }
 .login-form-create-account span{
   color: #ffffff;
@@ -105,7 +108,7 @@ input:focus{
   width: 100%;
   height: 20px;
   padding: 10px 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
   margin-bottom: 35px;
 }
 .login-form-remind-password span{
@@ -141,7 +144,7 @@ input:focus{
   color: rgba(255, 255, 255, .8);
   font-size: 1.15em;
   border-bottom: 1.5px solid rgba(255, 255, 255, .8);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 .login-field-box input::-webkit-input-placeholder {color: rgba(255, 255, 255, .8);}
 
@@ -150,7 +153,7 @@ input:focus{
   height: 50px;
   background: #BD7BF7;
   text-align: center;
-  font: 1.15em/50px 'Noto Sans', sans-serif;
+  font: 1.15em/50px Helvetica, sans-serif;
   color: #ffffff;
 }
 .global-section--wrapper{
@@ -181,6 +184,7 @@ input:focus{
 .top-panel--button{
   position: absolute;
   top: 0;
+  z-index: 3;
   width: 60px;
   height: 60px;
   display: inline-block;
@@ -204,11 +208,12 @@ input:focus{
   top: 0;
   left: 0;
   box-sizing: border-box;
+  z-index: 2;
   width: 100%;
   height: 100%;
   padding: 0 65px;
   color: #ffffff;
-  font: 1.1em/60px 'Noto Sans', sans-serif;
+  font: 1.1em/60px Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -234,7 +239,7 @@ input:focus{
   left: 50%;
   margin-left: -60px;
   color: #ffffff;
-  font: .8em/20px 'Noto Sans', sans-serif;
+  font: .8em/20px Helvetica, sans-serif;
   height: 32px;
   width: 120px;
   text-align: center;
@@ -296,7 +301,7 @@ input:focus{
   color: #666666;
   font-size: 1em;
   border-bottom: 1.5px solid #dddddd;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 .registration-form-create-account{
@@ -305,7 +310,7 @@ input:focus{
   text-align: center;
   display: inline-block;
   color: #cccccc;
-  font: 1em/70px 'Noto Sans', sans-serif;
+  font: 1em/70px Helvetica, sans-serif;
 }
 
 .registration-form-create-account a{
@@ -354,13 +359,13 @@ input:focus{
 }
 .profile--info-label{
   width: 100%;
-  font: 400 .75em 'Noto Sans', sans-serif;
+  font: 400 .75em Helvetica, sans-serif;
   padding-bottom: 5px;
   color: #999999;
 }
 .profile--info-value{
   width: 100%;
-  font: 400 .95em 'Noto Sans', sans-serif;
+  font: 400 .95em Helvetica, sans-serif;
   color: #555555;
 }
 
@@ -399,7 +404,7 @@ input:focus{
 .friends-list--name {
     width:220px;
     height:10px;
-    font:1em/50px 'Noto Sans', sans-serif;
+    font:1em/50px Helvetica, sans-serif;
     float:right;
     margin-left: 0px;
 }
@@ -408,4 +413,71 @@ input:focus{
     margin-left: 0px;
     margin-right: 140px;
     margin-top: 15px;
+}
+
+/*----Menu----*/
+
+.global-menu--wrapper{
+  position: absolute;
+  top: 0;
+  left: -81vw;
+  margin: 0;
+  padding: 0;
+  width: 80vw;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  z-index: 99999;
+}
+.global-menu--logo{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  background: #BD7BF7;
+  text-align: center;
+  color: #ffffff;
+  font: 400 1.2em/60px Helvetica, sans-serif;
+}
+.global-menu--list{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 60px;
+  overflow-y: auto;
+}
+.global-menu--item{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 25px;
+  height: 50px;
+  font: 400 1em/50px Helvetica, sans-serif;
+  color: #666666;
+  border-bottom: 1px solid #dddddd;
+}
+#menu.show{
+  animation-name: show-global-menu;
+  animation-duration: .5s;
+}
+#menu.hide{
+  animation-name: hide-global-menu;
+  animation-duration: .5s;
+}
+
+@-webkit-keyframes show-global-menu {
+    0 { left: -81vw; }
+    100% { left: 0; }
+}
+@-moz-keyframes show-global-menu {
+    0 { left: -81vw; }
+    100% { left: 0; }
+}
+@keyframes show-global-menu {
+    0 { left: -81vw; }
+    100% { left: 0; }
 }
