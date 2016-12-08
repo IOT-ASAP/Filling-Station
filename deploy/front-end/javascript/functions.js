@@ -46,11 +46,9 @@ function sendRegistrationData(){
 }
 
 function sendDeleteFriendRequest(event, target, attr){
-  var userId = {
-    id: +target.getAttribute(attr)
-  };
+  var id = +target.getAttribute(attr);
 
-  Ajax.post('/api/v1.0/deleteFriend', userId, function(){
+  Ajax.get('/api/v1.0/deleteFriend/' + id, function(){
     var data = JSON.parse(this);
 
     if(data.success){
@@ -62,11 +60,9 @@ function sendDeleteFriendRequest(event, target, attr){
 }
 
 function getUserLocation(event, target, attr){
-  var userId = {
-    id: +target.getAttribute(attr)
-  };
+  var id = +target.getAttribute(attr);
 
-  Ajax.post('/api/v1.0/getUserLocation', userId, function(){
+  Ajax.get('/api/v1.0/location/' + id, function(){
     var data = JSON.parse(this);
 
     if(data.success){

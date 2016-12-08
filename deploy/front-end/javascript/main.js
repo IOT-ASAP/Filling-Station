@@ -1,4 +1,5 @@
 var globalMenuIsActive = false;
+var CURRENT_USER_ID = 1;
 
 window.addEventListener('load', function(){
   loadLoginPage();
@@ -29,11 +30,3 @@ document.addEventListener('click', function(event){
     globalMenuIsActive = false;
   }
 }, false);
-
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
-  });
-}
