@@ -1,16 +1,31 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.fields import CharField, EmailField, Field
+from rest_framework.fields import CharField, EmailField, Field, SerializerMethodField
+from friendapi.serializers import UserFriendsSerializer
+from friendship.models import Friend
+
+from rest_framework.request import Request
+from rest_framework.test import APIRequestFactory
 
 from userapi.models import Location
+
+factory = APIRequestFactory()
+request = factory.get('/')
 
 User = get_user_model()
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    friends = SerializerMethodField()
     class Meta:
         model = User
-        fields = ('url', 'id', 'first_name', 'last_name', 'email')
+        fields = ('url', 'id', 'first_name', 'last_name', 'email', 'friends')
+
+    def get_friends(self, obj):
+        f_qs= Friend.objects.filter(from_user_id=obj.id)
+        friends = UserFriendsSerializer(f_qs, many=True, context={'request': request}).data
+        return friends
+
 
 class LocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
