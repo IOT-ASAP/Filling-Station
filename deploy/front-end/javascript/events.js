@@ -5,13 +5,17 @@ EventHandler.on({
   var value = target.getAttribute(attr),
       mapScriptTag = document.getElementById('mapScript');
 
-  if(value == 'map'){
-    mapScriptTag.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDsiKb2ZnfXxmWfEMsR3bnvf56x-mQKIX0&callback=initMap');
-  } else {
-    mapScriptTag.setAttribute('src', '');
-  }
   Ajax.page(target.getAttribute(attr), function(){
+    if(!globalMenuIsActive){
+      removeClass(menu, 'show');
+      addClass(menu, 'hide');
+      menu.style.left = '-81vw';
+      globalMenuIsActive = false;
+    }
     globalWrapper.innerHTML = this;
+    if(value == 'map'){
+      initMap();
+    }
   });
 });
 
