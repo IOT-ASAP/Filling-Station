@@ -25,8 +25,14 @@ android {
 
 dependencies {
 
-    //13999
+    //1399
     compile 'com.android.support:multidex:1.0.1'
+
+    //1399
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
