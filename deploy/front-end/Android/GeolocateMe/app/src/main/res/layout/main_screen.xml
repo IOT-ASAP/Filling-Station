@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.03"
+        android:textSize="20dp"
+
+        />
+
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.08"
+        android:textSize="20dp"
+
+
+        />
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/logo"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+
+
+        />
+
+    <TextView
+        android:text="Привіт у програмі GeolocateME!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_weight="0.39"
+        android:textSize="20dp"
+        android:gravity="center"
+
+        />
+
+    <Button
+        android:text="Карта"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_weight="0.03"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:onClick="startmap" />
+
+    <Button
+        android:text="Меню друзів"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_weight="0.03"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:onClick="startfriendsmenu" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_weight="0.03"
+        android:text="Налаштування"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:onClick="startsetmenu" />
+
+    <Button
+        android:text="Про програму"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_weight="0.03"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:onClick="startabout" />
+
+</LinearLayout>
