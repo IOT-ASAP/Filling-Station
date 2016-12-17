@@ -1,0 +1,5 @@
+prototypes/front-end/androidapp/GeolocateMEMap/.idea/compiler.xml
+	
+prototypes/front-end/androidapp/GeolocateMEMap/.idea/copyright/profiles_settings.xml
+	
+prototypes/front-end/androidapp/GeolocateMEMap/.idea/misc.xml
