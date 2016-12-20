@@ -9,4 +9,4 @@ class UserFriendsSerializer(serializers.HyperlinkedModelSerializer):
 class FriendshipRequestsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = FriendshipRequest
-        fields = ('url', 'from_user_id', 'to_user_id')
+        fields = ('id', 'from_user_id')

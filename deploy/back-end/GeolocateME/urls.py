@@ -24,13 +24,11 @@ from friendapi.views import UserFriendsViewSet, FriendshipRequestsViewSet
 router = routers.DefaultRouter()
 router.register(r'user',views.UserViewSet)
 router.register(r'location', views.LocationViewSet)
-router.register(r'friends', UserFriendsViewSet)
-router.register(r'friendsrequests', FriendshipRequestsViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1.0/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework') ),
     url(r'^api/v1.0/register/', UserCreateAPIView.as_view(), name='register'),
     url(r'^api/v1.0/login/', UserLoginAPIView.as_view(), name='login'),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
