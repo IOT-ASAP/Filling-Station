@@ -23,7 +23,7 @@ public class SampleSpiceActivity extends BaseSpiceActivity {
 
         mTxtView = (TextView) findViewById(R.id.txtV);
 
-        txtRequest = new SimpleTextRequest("http://androiddocs.ru/api/friends.json");
+        txtRequest = new SimpleTextRequest("http://localhost:8000/api/v1.0/user/3/?format=json");
     }
 
     @Override
