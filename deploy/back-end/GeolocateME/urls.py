@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 from userapi import views
 from rest_framework import routers
 from userapi.views import UserCreateAPIView, UserLoginAPIView
-from friendapi.views import UserFriendsViewSet, FriendshipRequestsViewSet, SendRequestAPIView
+from friendapi.views import UserFriendsViewSet, FriendshipRequestsViewSet, SendRequestAPIView, DeleteFriendAPIView
 
 router = routers.DefaultRouter()
 router.register(r'user',views.UserViewSet)
@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^api/v1.0/register/', UserCreateAPIView.as_view(), name='register'),
     url(r'^api/v1.0/login/', UserLoginAPIView.as_view(), name='login'),
     url(r'^api/v1.0/sendrequest/', SendRequestAPIView.as_view(), name='send_request'),
+    url(r'^api/v1.0/deletefriend/', DeleteFriendAPIView.as_view(), name='delete_friend'),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
 ]

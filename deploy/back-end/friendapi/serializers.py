@@ -31,3 +31,21 @@ class SendRequestSerializer(serializers.ModelSerializer):
             to_user=to_user,
         )
         return validated_data
+
+class DeleteFriendSerializer(serializers.ModelSerializer):
+    from_user_id=IntegerField()
+    to_user_id=IntegerField()
+    class Meta:
+        model = Friend
+        fields = ['from_user_id', 'to_user_id', ]
+
+    def destroy(self, request):
+        from_user_id = request['from_user_id']
+        to_user_id = request['to_user_id']
+        from_user=User.objects.get(from_user_id)
+        to_user=User.objects.get(to_user_id)
+        Friend.objects.remove_friend(
+            from_user=from_user,
+            to_user=to_user,
+        )
+        return request
