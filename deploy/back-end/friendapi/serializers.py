@@ -49,3 +49,15 @@ class DeleteFriendSerializer(serializers.ModelSerializer):
             to_user=to_user,
         )
         return request
+
+class AcceptFriendRequestSerializer(serializers.ModelSerializer):
+    request_id = IntegerField()
+    class Meta:
+        model = FriendshipRequest
+        fields = ['request_id', ]
+
+    def create(self, validated_data):
+        id = validated_data['id']
+        friend_request = FriendshipRequest.objects.get(pk=id)
+        friend_request.accept()
+        return validated_data
