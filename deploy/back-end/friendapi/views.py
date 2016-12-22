@@ -32,3 +32,7 @@ class DeleteFriendAPIView(APIView):
 class AcceptFriendRequestView(CreateAPIView):
    serializer_class = DeleteFriendSerializer
    queryset = FriendshipRequest.objects.all()
+
+class RejectFriendRequestView(DestroyAPIView):
+   serializer_class = DeleteFriendSerializer
+   queryset = FriendshipRequest.objects.all()

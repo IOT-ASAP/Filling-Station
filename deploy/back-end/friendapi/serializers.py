@@ -57,7 +57,19 @@ class AcceptFriendRequestSerializer(serializers.ModelSerializer):
         fields = ['request_id', ]
 
     def create(self, validated_data):
-        id = validated_data['id']
-        friend_request = FriendshipRequest.objects.get(pk=id)
+        request_id = validated_data['request_id']
+        friend_request = FriendshipRequest.objects.get(pk=request_id)
         friend_request.accept()
+        return validated_data
+
+class RejectFriendRequestSerializer(serializers.ModelSerializer):
+    request_id = IntegerField()
+    class Meta:
+        model = FriendshipRequest
+        fields = ['request_id', ]
+
+    def destroy(self, validated_data):
+        request_id = validated_data['request_id']
+        friend_request = FriendshipRequest.objects.get(pk=request_id)
+        friend_request.reject()
         return validated_data

@@ -20,7 +20,7 @@ from userapi import views
 from rest_framework import routers
 from userapi.views import UserCreateAPIView, UserLoginAPIView
 from friendapi.views import UserFriendsViewSet, FriendshipRequestsViewSet, SendRequestAPIView, DeleteFriendAPIView, \
-    AcceptFriendRequestView
+    AcceptFriendRequestView, RejectFriendRequestView
 
 router = routers.DefaultRouter()
 router.register(r'user',views.UserViewSet)
@@ -35,5 +35,6 @@ urlpatterns = [
     url(r'^api/v1.0/sendrequest/', SendRequestAPIView.as_view(), name='send_request'),
     url(r'^api/v1.0/deletefriend/', DeleteFriendAPIView.as_view(), name='delete_friend'),
     url(r'^api/v1.0/acceptfriendrequest/', AcceptFriendRequestView.as_view(), name='accept_friend_request'),
+    url(r'^api/v1.0/rejectfriendrequest/', RejectFriendRequestView.as_view(), name='reject_friend_request'),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
 ]
