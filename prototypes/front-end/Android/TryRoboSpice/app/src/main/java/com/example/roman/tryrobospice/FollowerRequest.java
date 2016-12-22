@@ -1,12 +1,13 @@
 package com.example.roman.tryrobospice;
 import com.octo.android.robospice.SpringAndroidSpiceService;
+import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceRequest;
 //import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceRequest<RESULT>;
 
 /**
  * Created by Roman on 22-Dec-16.
  */
 
-public class FollowersRequest extends SpringAndroidSpiceRequest<FollowerList> {
+class FollowersRequest extends SpringAndroidSpiceRequest<FollowerList> {
 
     private String user;
 
