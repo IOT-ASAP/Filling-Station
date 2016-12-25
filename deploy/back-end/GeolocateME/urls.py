@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from userapi import views
 from rest_framework import routers
-from userapi.views import UserCreateAPIView, UserLoginAPIView
+from userapi.views import UserCreateAPIView, UserLoginAPIView, GetStatusAPIView
 from friendapi.views import UserFriendsViewSet, FriendshipRequestsViewSet, SendRequestAPIView, DeleteFriendAPIView, \
     AcceptFriendRequestView, RejectFriendRequestView
 
@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^api/v1.0/register/', UserCreateAPIView.as_view(), name='register'),
     url(r'^api/v1.0/login/', UserLoginAPIView.as_view(), name='login'),
     url(r'^api/v1.0/sendrequest/', SendRequestAPIView.as_view(), name='send_request'),
+    url(r'^api/v1.0/sendstatus/', GetStatusAPIView.as_view(), name='get_status'),
     url(r'^api/v1.0/deletefriend/', DeleteFriendAPIView.as_view(), name='delete_friend'),
     url(r'^api/v1.0/acceptfriendrequest/', AcceptFriendRequestView.as_view(), name='accept_friend_request'),
     url(r'^api/v1.0/rejectfriendrequest/', RejectFriendRequestView.as_view(), name='reject_friend_request'),
