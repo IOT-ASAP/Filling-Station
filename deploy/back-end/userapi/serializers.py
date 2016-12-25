@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.fields import CharField, EmailField, Field, SerializerMethodField
+from rest_framework.fields import CharField, EmailField, Field, SerializerMethodField, IntegerField
 from friendapi.serializers import UserFriendsSerializer, FriendshipRequestsSerializer
 from friendship.models import Friend, FriendshipRequest
 
@@ -36,6 +36,22 @@ class LocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Location
         fields = ('url', 'lat', 'lng')
+
+class GetStatusSerializer(serializers.ModelSerializer):
+    user_id = IntegerField()
+    class Meta:
+        model = Location
+        fields=['user_id', 'status',]
+
+    def update(self, instance, validated_data):
+        user_id = validated_data['user_id']
+        status = validated_data['status']
+        user_obj = Location.objects.get(user_id=user_id)
+        print user_obj
+        user_obj.status = status
+        user_obj.save()
+        return validated_data
+
 
 class UserCreateSerializer(serializers.HyperlinkedModelSerializer):
     first_name = CharField()

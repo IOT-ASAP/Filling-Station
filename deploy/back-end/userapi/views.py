@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from userapi.serializers import UserSerializer, LocationSerializer
+from userapi.serializers import UserSerializer, LocationSerializer, GetStatusSerializer
 from .serializers import UserCreateSerializer, UserLoginSerializer
 from rest_framework.generics import CreateAPIView, DestroyAPIView, ListAPIView, UpdateAPIView, RetrieveAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
@@ -35,4 +35,6 @@ class UserLoginAPIView(APIView):
             return Response(new_data, status=HTTP_200_OK)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
-
+class GetStatusAPIView(UpdateAPIView):
+    serializer_class = GetStatusSerializer
+    queryset = Location.objects.all()
